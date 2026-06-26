@@ -24,18 +24,7 @@ keypad.addEventListener("click", (e) => {
         return;
     }
 
-    if (value === "enter") {
-
-        if (input === PASSWORD) {
-            window.location.href = "birthday.html";
-        } else {
-            message.innerText = "Wrong Passcode ❤️";
-            input = "";
-            updateBoxes();
-        }
-
-        return;
-    }
+    if (value === "*" || value === "#") return;
 
     if (input.length < 8) {
         input += value;
@@ -43,3 +32,24 @@ keypad.addEventListener("click", (e) => {
     }
 
 });
+
+document.getElementById("deleteBtn").onclick = () => {
+    input = input.slice(0, -1);
+    updateBoxes();
+};
+
+document.getElementById("nextBtn").onclick = () => {
+
+    if (input === PASSWORD) {
+
+        window.location.href = "birthday.html";
+
+    } else {
+
+        message.innerText = "Wrong Passcode ❤️";
+        input = "";
+        updateBoxes();
+
+    }
+
+};
