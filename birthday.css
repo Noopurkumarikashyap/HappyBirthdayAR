@@ -1,0 +1,143 @@
+body{
+
+    margin:0;
+
+    font-family:Poppins,sans-serif;
+
+    background:url(images/background.png) center/cover no-repeat;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-height:100vh;
+
+}
+
+.card{
+
+    width:1100px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:70px;
+
+    padding:50px;
+
+    background:rgba(255,255,255,.25);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:35px;
+
+    border:1px solid rgba(255,255,255,.4);
+
+}
+
+.photo img{
+
+    width:370px;
+
+    border-radius:25px;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.18);
+
+}
+
+.content{
+
+    flex:1;
+
+}
+
+.content h1{
+
+    font-family:"Baloo 2";
+
+    font-size:56px;
+
+    color:#3b83b9;
+
+    margin-bottom:20px;
+
+}
+
+.content p{
+
+    font-size:20px;
+
+    line-height:1.8;
+
+    color:#555;
+
+    margin-bottom:35px;
+
+}
+
+.content button{
+
+    background:#3b83b9;
+
+    color:white;
+
+    border:none;
+
+    padding:18px 42px;
+
+    border-radius:50px;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.content button:hover{
+
+    transform:scale(1.08);
+
+}
+
+.deco{
+
+    position:fixed;
+
+    pointer-events:none;
+
+}
+
+.deco-top{
+
+    top:0;
+
+    left:0;
+
+    width:300px;
+
+}
+
+.deco-bottom{
+
+    bottom:0;
+
+    right:0;
+
+    width:340px;
+
+}
+
+.deco-left{
+
+    bottom:0;
+
+    left:0;
+
+    width:260px;
+
+}
