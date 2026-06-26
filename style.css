@@ -168,25 +168,80 @@ h3{
 
 }
 
+
 /* Decorative Images */
 
 .deco{
-    position:fixed;
-    pointer-events:none;
-    user-select:none;
-    z-index:0;
+    position: fixed;
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
 }
 
 .deco-top{
-    top:0;
-    left:0;
-    width:320px;
+    top: -10px;
+    left: -10px;
+    width: 320px;
+    transform-origin: bottom right;
+    animation: floatTop 5s ease-in-out infinite;
 }
 
 .deco-bottom{
-    bottom:0;
-    right:0;
-    width:340px;
+    bottom: -10px;
+    right: -10px;
+    width: 340px;
+    transform-origin: bottom center;
+    animation: floatBottom 6s ease-in-out infinite;
+}
+
+/* Gentle floating */
+
+@keyframes floatTop{
+
+    0%{
+        transform:translate(0px,0px) rotate(-1deg);
+    }
+
+    25%{
+        transform:translate(4px,-5px) rotate(1deg);
+    }
+
+    50%{
+        transform:translate(8px,-10px) rotate(2deg);
+    }
+
+    75%{
+        transform:translate(3px,-6px) rotate(0deg);
+    }
+
+    100%{
+        transform:translate(0px,0px) rotate(-1deg);
+    }
+
+}
+
+@keyframes floatBottom{
+
+    0%{
+        transform:translate(0px,0px) rotate(1deg);
+    }
+
+    25%{
+        transform:translate(-4px,-6px) rotate(-1deg);
+    }
+
+    50%{
+        transform:translate(-8px,-12px) rotate(-2deg);
+    }
+
+    75%{
+        transform:translate(-3px,-7px) rotate(0deg);
+    }
+
+    100%{
+        transform:translate(0px,0px) rotate(1deg);
+    }
+
 }
 
 /* Make sure content stays above decorations */
