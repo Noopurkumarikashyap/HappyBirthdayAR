@@ -217,7 +217,20 @@ h3{
     transform-origin: bottom center;
     animation: floatBottom 4s ease-in-out infinite;
 }
+.deco-bottom-left{
+    position: fixed;
 
+    bottom: -10px;
+    left: -10px;
+
+    width: 280px;
+
+    transform-origin: bottom center;
+
+    animation: floatLeft 5s ease-in-out infinite;
+
+    z-index: 2;
+}
 /* Gentle floating */
 
 @keyframes floatTop{
