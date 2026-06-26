@@ -207,7 +207,7 @@ h3{
     left: -10px;
     width: 320px;
     transform-origin: bottom right;
-    animation: floatTop 6s ease-in-out infinite;
+    animation: floatTop 4s ease-in-out infinite;
 }
 
 .deco-bottom{
@@ -215,7 +215,7 @@ h3{
     right: -10px;
     width: 340px;
     transform-origin: bottom center;
-    animation: floatBottom 6s ease-in-out infinite;
+    animation: floatBottom 4s ease-in-out infinite;
 }
 
 /* Gentle floating */
