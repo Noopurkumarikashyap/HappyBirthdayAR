@@ -77,30 +77,54 @@ h3{
 }
 
 .key{
+
     width:90px;
     height:90px;
 
-    border:none;
     border-radius:50%;
 
-    background:white;
+    border:1.5px solid rgba(255,255,255,0.6);
+
+    background:rgba(255,255,255,0.28);
+
+    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.12),
+        inset 0 1px 1px rgba(255,255,255,0.9),
+        inset 0 -4px 10px rgba(255,255,255,0.15);
+
+    color:#3b83b9;
 
     font-size:40px;
     font-weight:600;
 
-    color:#3b83b9;
-
     cursor:pointer;
 
-    box-shadow:0 8px 20px rgba(0,0,0,.15);
+    transition:all .25s ease;
 
-    transition:.2s;
 }
-
 .key:hover{
-    transform:scale(1.08);
-}
 
+    transform:translateY(-3px) scale(1.05);
+
+    background:rgba(255,255,255,0.38);
+
+    box-shadow:
+        0 14px 28px rgba(0,0,0,0.18),
+        inset 0 2px 2px rgba(255,255,255,1),
+        inset 0 -4px 10px rgba(255,255,255,0.2);
+
+}
+.key:active{
+
+    transform:scale(.95);
+
+    box-shadow:
+        inset 0 4px 12px rgba(0,0,0,0.12);
+
+}
 .key[data-value="delete"]{
     font-size:32px;
 }
