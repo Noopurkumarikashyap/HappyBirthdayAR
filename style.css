@@ -30,7 +30,7 @@ body{
 h1{
     font-family:Sacramento;
     font-size:70px;
-    color:#b10b0b;
+    color:#3b83b9;
 }
 
 p{
@@ -39,7 +39,7 @@ p{
 }
 
 h3{
-    color:#b10b0b;
+    color:#3b83b9;
     margin:25px 0 18px;
 }
 
@@ -54,7 +54,7 @@ h3{
     width:55px;
     height:55px;
 
-    border:3px solid #b10b0b;
+    border:3px solid #3b83b9;
     border-radius:10px;
 
     display:flex;
@@ -63,7 +63,7 @@ h3{
 
     font-size:28px;
     font-weight:600;
-    color:#b10b0b;
+    color:#3b83b9;
 
     background:rgba(255,255,255,.35);
     backdrop-filter:blur(5px);
@@ -88,7 +88,7 @@ h3{
     font-size:40px;
     font-weight:600;
 
-    color:#b10b0b;
+    color:#3b83b9;
 
     cursor:pointer;
 
@@ -101,23 +101,69 @@ h3{
     transform:scale(1.08);
 }
 
-.key[data-value="enter"]{
-    border-radius:45px;
-    width:198px;
-    grid-column:2/4;
-
-    font-size:28px;
-
-    background:#b10b0b;
-    color:white;
-}
-
 .key[data-value="delete"]{
     font-size:32px;
 }
 
 #message{
     margin-top:20px;
-    color:#b10b0b;
+    color:#3b83b9;
     font-weight:600;
+}
+.actions{
+    margin-top:30px;
+
+    display:flex;
+    justify-content:center;
+    gap:18px;
+}
+
+.actions button{
+
+    border:none;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:.25s;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+
+}
+
+#deleteBtn{
+
+    width:90px;
+    height:55px;
+
+    border-radius:28px;
+
+    background:white;
+
+    color:#3b83b9;
+
+    font-size:28px;
+
+}
+
+#nextBtn{
+
+    width:170px;
+    height:55px;
+
+    border-radius:28px;
+
+    background:#3b83b9;
+
+    color:white;
+
+    font-size:22px;
+
+}
+
+.actions button:hover{
+
+    transform:scale(1.05);
+
 }
