@@ -167,3 +167,31 @@ h3{
     transform:scale(1.05);
 
 }
+
+/* Decorative Images */
+
+.deco{
+    position:fixed;
+    pointer-events:none;
+    user-select:none;
+    z-index:0;
+}
+
+.deco-top{
+    top:0;
+    left:0;
+    width:320px;
+}
+
+.deco-bottom{
+    bottom:0;
+    right:0;
+    width:340px;
+}
+
+/* Make sure content stays above decorations */
+
+.container{
+    position:relative;
+    z-index:5;
+}
