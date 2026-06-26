@@ -511,3 +511,75 @@ h3{
 
 .birthday-title span:nth-child(16){animation:bounce4 1.60s infinite ease-in-out;}
 .birthday-title span:nth-child(17){animation:bounce2 .85s infinite ease-in-out;}
+
+/* ===========================
+   MUSIC BUTTON
+=========================== */
+
+#musicBtn{
+
+    position:fixed;
+
+    top:25px;
+    right:25px;
+
+    width:58px;
+    height:58px;
+
+    border:none;
+    border-radius:50%;
+
+    background:rgba(255,255,255,.28);
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1.5px solid rgba(255,255,255,.6);
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.15),
+        inset 0 1px 2px rgba(255,255,255,.9);
+
+    color:#3b83b9;
+
+    font-size:28px;
+
+    cursor:pointer;
+
+    z-index:1000;
+
+    transition:.25s;
+
+}
+
+#musicBtn:hover{
+
+    transform:scale(1.08);
+
+}
+
+#musicBtn.playing{
+
+    animation:musicPulse 1.4s infinite;
+
+}
+
+@keyframes musicPulse{
+
+    0%,100%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.15);
+
+        box-shadow:
+            0 0 18px rgba(59,131,185,.45),
+            inset 0 1px 2px rgba(255,255,255,.9);
+
+    }
+
+}
