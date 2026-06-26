@@ -399,3 +399,30 @@ h3{
         0 4px 15px rgba(59,131,185,.2);
 
 }
+
+.birthday-title span{
+    display:inline-block;
+    transition:.25s;
+}
+
+.birthday-title .space{
+    width:.35em;
+}
+
+.birthday-title span:nth-child(1){transform:rotate(-10deg);}
+.birthday-title span:nth-child(2){transform:rotate(6deg);}
+.birthday-title span:nth-child(3){transform:rotate(-5deg);}
+.birthday-title span:nth-child(4){transform:rotate(8deg);}
+.birthday-title span:nth-child(5){transform:rotate(-8deg);}
+
+.birthday-title span:nth-child(7){transform:rotate(7deg);}
+.birthday-title span:nth-child(8){transform:rotate(-6deg);}
+.birthday-title span:nth-child(9){transform:rotate(4deg);}
+.birthday-title span:nth-child(10){transform:rotate(-7deg);}
+.birthday-title span:nth-child(11){transform:rotate(5deg);}
+.birthday-title span:nth-child(12){transform:rotate(-4deg);}
+.birthday-title span:nth-child(13){transform:rotate(8deg);}
+.birthday-title span:nth-child(14){transform:rotate(-6deg);}
+
+.birthday-title span:nth-child(16){transform:rotate(9deg);}
+.birthday-title span:nth-child(17){transform:rotate(-9deg);}
