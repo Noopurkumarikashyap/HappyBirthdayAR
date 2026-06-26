@@ -1,15 +1,183 @@
-body{
-    font-family: Arial;
-    text-align:center;
-    background:#111;
-    color:white;
-    padding-top:100px;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-button{
-    padding:15px 30px;
-    font-size:18px;
-    border:none;
-    border-radius:10px;
-    cursor:pointer;
+body{
+
+font-family:Poppins,sans-serif;
+
+height:100vh;
+
+background: url("images/background.jpg");
+
+background-size:cover;
+
+background-position:center;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+.overlay{
+
+width:100%;
+height:100%;
+background:rgba(220,235,255,.35);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+backdrop-filter:blur(4px);
+
+}
+
+.card{
+
+width:420px;
+
+background:rgba(255,250,244,.93);
+
+border-radius:25px;
+
+padding:40px;
+
+text-align:center;
+
+box-shadow:0 20px 60px rgba(0,0,0,.15);
+
+}
+
+.cake{
+
+font-size:50px;
+
+margin-bottom:10px;
+
+}
+
+h1{
+
+font-family:Sacramento;
+
+font-size:62px;
+
+color:#4d87d6;
+
+margin-bottom:10px;
+
+}
+
+.subtitle{
+
+color:#666;
+
+margin-bottom:15px;
+
+}
+
+.instruction{
+
+margin-bottom:15px;
+
+font-size:15px;
+
+}
+
+#dots{
+
+display:flex;
+
+justify-content:center;
+
+gap:15px;
+
+margin-bottom:25px;
+
+}
+
+#dots span{
+
+width:18px;
+
+height:18px;
+
+border-radius:50%;
+
+border:2px solid #77aef4;
+
+}
+
+.active{
+
+background:#77aef4;
+
+}
+
+.keypad{
+
+display:grid;
+
+grid-template-columns:repeat(3,80px);
+
+gap:15px;
+
+justify-content:center;
+
+}
+
+.keypad button{
+
+height:70px;
+
+border:none;
+
+border-radius:50%;
+
+font-size:28px;
+
+cursor:pointer;
+
+background:white;
+
+box-shadow:0 5px 12px rgba(0,0,0,.1);
+
+transition:.25s;
+
+}
+
+.keypad button:hover{
+
+background:#7db3ff;
+
+color:white;
+
+transform:scale(1.08);
+
+}
+
+#enter{
+
+background:#4f96ff;
+
+color:white;
+
+}
+
+#message{
+
+margin-top:25px;
+
+font-weight:600;
+
+color:#dd3f3f;
+
 }
