@@ -183,7 +183,7 @@ h3{
     left: -10px;
     width: 320px;
     transform-origin: bottom right;
-    animation: floatTop 5s ease-in-out infinite;
+    animation: floatTop 6s ease-in-out infinite;
 }
 
 .deco-bottom{
@@ -199,23 +199,23 @@ h3{
 @keyframes floatTop{
 
     0%{
-        transform:translate(0px,0px) rotate(-1deg);
+        transform: translateY(0px) rotate(-1deg);
     }
 
     25%{
-        transform:translate(4px,-5px) rotate(1deg);
+        transform: translateY(-6px) rotate(1deg);
     }
 
     50%{
-        transform:translate(8px,-10px) rotate(2deg);
+        transform: translateY(-12px) rotate(0deg);
     }
 
     75%{
-        transform:translate(3px,-6px) rotate(0deg);
+        transform: translateY(-6px) rotate(-1deg);
     }
 
     100%{
-        transform:translate(0px,0px) rotate(-1deg);
+        transform: translateY(0px) rotate(-1deg);
     }
 
 }
