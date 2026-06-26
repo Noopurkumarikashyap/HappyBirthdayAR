@@ -4,7 +4,7 @@ body{
 
     font-family:Poppins,sans-serif;
 
-    background:url(images/background.png) center/cover no-repeat;
+    background:#f9e3c9;
 
     display:flex;
 
@@ -24,20 +24,11 @@ body{
 
     align-items:center;
 
-    gap:70px;
+    gap:80px;
 
-    padding:50px;
-
-    background:rgba(255,255,255,.25);
-
-    backdrop-filter:blur(18px);
-
-    border-radius:35px;
-
-    border:1px solid rgba(255,255,255,.4);
+    padding:40px 20px;
 
 }
-
 .photo img{
 
     width:370px;
