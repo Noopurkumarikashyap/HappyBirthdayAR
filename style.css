@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Baloo+2:wght@700&display=swap');
 
 *{
     margin:0;
@@ -382,47 +382,132 @@ h3{
     z-index:3;
 }
 
+/* ===========================
+   HAPPY BIRTHDAY AR TITLE
+=========================== */
+
 .birthday-title{
 
-    font-family:"Sacramento",cursive;
+    font-family:"Baloo 2", cursive;
 
-    font-size:64px;
+    font-size:58px;
+
+    font-weight:700;
 
     color:#3b83b9;
 
-    margin:15px 0 22px;
+    letter-spacing:2px;
 
     text-align:center;
 
+    margin:15px 0 22px;
+
+    line-height:1;
+
     text-shadow:
-        0 2px 8px rgba(255,255,255,.8),
-        0 4px 15px rgba(59,131,185,.2);
+        0 3px 10px rgba(255,255,255,.85),
+        0 5px 15px rgba(59,131,185,.2);
 
 }
 
 .birthday-title span{
+
     display:inline-block;
-    transition:.25s;
+
+    margin:0 2px;
+
+    transform-origin:center bottom;
+
 }
 
 .birthday-title .space{
-    width:.35em;
+
+    width:18px;
+
 }
 
-.birthday-title span:nth-child(1){transform:rotate(-10deg);}
-.birthday-title span:nth-child(2){transform:rotate(6deg);}
-.birthday-title span:nth-child(3){transform:rotate(-5deg);}
-.birthday-title span:nth-child(4){transform:rotate(8deg);}
-.birthday-title span:nth-child(5){transform:rotate(-8deg);}
+/* ===========================
+   LETTER ANIMATIONS
+=========================== */
 
-.birthday-title span:nth-child(7){transform:rotate(7deg);}
-.birthday-title span:nth-child(8){transform:rotate(-6deg);}
-.birthday-title span:nth-child(9){transform:rotate(4deg);}
-.birthday-title span:nth-child(10){transform:rotate(-7deg);}
-.birthday-title span:nth-child(11){transform:rotate(5deg);}
-.birthday-title span:nth-child(12){transform:rotate(-4deg);}
-.birthday-title span:nth-child(13){transform:rotate(8deg);}
-.birthday-title span:nth-child(14){transform:rotate(-6deg);}
+@keyframes bounce1{
 
-.birthday-title span:nth-child(16){transform:rotate(9deg);}
-.birthday-title span:nth-child(17){transform:rotate(-9deg);}
+    0%,100%{
+        transform:rotate(-10deg) scale(1);
+    }
+
+    50%{
+        transform:rotate(-8deg) scale(1.28);
+    }
+
+}
+
+@keyframes bounce2{
+
+    0%,100%{
+        transform:rotate(8deg) scale(.95);
+    }
+
+    50%{
+        transform:rotate(12deg) scale(1.18);
+    }
+
+}
+
+@keyframes bounce3{
+
+    0%,100%{
+        transform:rotate(-6deg) scale(1.08);
+    }
+
+    50%{
+        transform:rotate(-12deg) scale(.82);
+    }
+
+}
+
+@keyframes bounce4{
+
+    0%,100%{
+        transform:rotate(12deg) scale(.9);
+    }
+
+    50%{
+        transform:rotate(5deg) scale(1.35);
+    }
+
+}
+
+@keyframes bounce5{
+
+    0%,100%{
+        transform:rotate(-5deg) scale(1);
+    }
+
+    50%{
+        transform:rotate(4deg) scale(1.15);
+    }
+
+}
+
+/* ===========================
+   RANDOM SPEEDS
+=========================== */
+
+.birthday-title span:nth-child(1){animation:bounce1 1.10s infinite ease-in-out;}
+.birthday-title span:nth-child(2){animation:bounce3 1.75s infinite ease-in-out;}
+.birthday-title span:nth-child(3){animation:bounce5 .95s infinite ease-in-out;}
+.birthday-title span:nth-child(4){animation:bounce2 1.35s infinite ease-in-out;}
+.birthday-title span:nth-child(5){animation:bounce4 1.80s infinite ease-in-out;}
+
+.birthday-title span:nth-child(7){animation:bounce2 1.20s infinite ease-in-out;}
+.birthday-title span:nth-child(8){animation:bounce5 1.65s infinite ease-in-out;}
+.birthday-title span:nth-child(9){animation:bounce1 .90s infinite ease-in-out;}
+.birthday-title span:nth-child(10){animation:bounce3 1.55s infinite ease-in-out;}
+.birthday-title span:nth-child(11){animation:bounce4 1.00s infinite ease-in-out;}
+.birthday-title span:nth-child(12){animation:bounce2 1.95s infinite ease-in-out;}
+.birthday-title span:nth-child(13){animation:bounce1 1.30s infinite ease-in-out;}
+.birthday-title span:nth-child(14){animation:bounce5 1.45s infinite ease-in-out;}
+
+.birthday-title span:nth-child(16){animation:bounce4 1.60s infinite ease-in-out;}
+.birthday-title span:nth-child(17){animation:bounce2 .85s infinite ease-in-out;}
