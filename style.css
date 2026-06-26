@@ -11,7 +11,7 @@ body{
     height:100vh;
     font-family:Poppins,sans-serif;
 
-    background:url("images/background.jpg") center center/cover no-repeat;
+    background:url("images/background.png") center center/cover no-repeat;
 
     display:flex;
     justify-content:center;
