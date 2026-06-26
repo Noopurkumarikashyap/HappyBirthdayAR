@@ -381,3 +381,21 @@ h3{
 .deco{
     z-index:3;
 }
+
+.birthday-title{
+
+    font-family:"Sacramento",cursive;
+
+    font-size:64px;
+
+    color:#3b83b9;
+
+    margin:15px 0 22px;
+
+    text-align:center;
+
+    text-shadow:
+        0 2px 8px rgba(255,255,255,.8),
+        0 4px 15px rgba(59,131,185,.2);
+
+}
