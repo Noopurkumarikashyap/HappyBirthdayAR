@@ -53,3 +53,41 @@ document.getElementById("nextBtn").onclick = () => {
     }
 
 };
+
+const music = document.getElementById("bgMusic");
+const musicBtn = document.getElementById("musicBtn");
+
+music.volume = 0.4;
+
+music.play().then(() => {
+
+    musicBtn.innerHTML = "🔊";
+    musicBtn.classList.add("playing");
+
+}).catch(() => {
+
+    musicBtn.innerHTML = "🔇";
+
+});
+
+musicBtn.addEventListener("click", () => {
+
+    if(music.paused){
+
+        music.play();
+
+        musicBtn.innerHTML = "🔊";
+        musicBtn.title = "Music On";
+        musicBtn.classList.add("playing");
+
+    }else{
+
+        music.pause();
+
+        musicBtn.innerHTML = "🔇";
+        musicBtn.title = "Music Off";
+        musicBtn.classList.remove("playing");
+
+    }
+
+});
