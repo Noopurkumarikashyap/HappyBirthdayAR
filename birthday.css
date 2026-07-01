@@ -394,19 +394,34 @@ body{
    GIFT 2 : COLLAGE
 =========================== */
 
-.collage{
+collage{
+
     position:relative;
-    min-height:340px;
-    border-radius:18px;
+
+    height:78vh;
+
+    min-height:720px;
+
+    border-radius:22px;
+
     overflow:hidden;
-    background:linear-gradient(135deg,#fff4f7,#ffe6ee);
-    padding:20px;
+
+    background:linear-gradient(135deg,#fff5f7,#ffe6ee);
+
+    padding:35px;
+
 }
 
-.kiss-bg{
+.kiss-bg span{
+
     position:absolute;
-    inset:0;
-    z-index:0;
+
+    font-size:48px;
+
+    opacity:.15;
+
+    transform:rotate(var(--rot));
+
 }
 
 .kiss-bg span{
@@ -415,46 +430,93 @@ body{
     opacity:.18;
 }
 
-.kiss-bg span:nth-child(1){ top:6%;  left:10%; }
-.kiss-bg span:nth-child(2){ top:14%; left:70%; }
-.kiss-bg span:nth-child(3){ top:30%; left:40%; }
-.kiss-bg span:nth-child(4){ top:42%; left:15%; }
-.kiss-bg span:nth-child(5){ top:48%; left:80%; }
-.kiss-bg span:nth-child(6){ top:60%; left:50%; }
-.kiss-bg span:nth-child(7){ top:70%; left:20%; }
-.kiss-bg span:nth-child(8){ top:78%; left:65%; }
-.kiss-bg span:nth-child(9){ top:88%; left:35%; }
-.kiss-bg span:nth-child(10){top:20%; left:88%; }
-.kiss-bg span:nth-child(11){top:55%; left:5%;  }
-.kiss-bg span:nth-child(12){top:92%; left:8%;  }
+.kiss-bg span:nth-child(1){top:5%;left:8%;--rot:-20deg;}
+.kiss-bg span:nth-child(2){top:10%;left:65%;--rot:18deg;}
+.kiss-bg span:nth-child(3){top:22%;left:40%;--rot:-10deg;}
+.kiss-bg span:nth-child(4){top:36%;left:12%;--rot:25deg;}
+.kiss-bg span:nth-child(5){top:44%;left:78%;--rot:-15deg;}
+.kiss-bg span:nth-child(6){top:55%;left:48%;--rot:12deg;}
+.kiss-bg span:nth-child(7){top:66%;left:18%;--rot:-18deg;}
+.kiss-bg span:nth-child(8){top:72%;left:72%;--rot:20deg;}
+.kiss-bg span:nth-child(9){top:86%;left:30%;--rot:-12deg;}
+.kiss-bg span:nth-child(10){top:18%;left:90%;--rot:15deg;}
+.kiss-bg span:nth-child(11){top:55%;left:3%;--rot:-25deg;}
+.kiss-bg span:nth-child(12){top:90%;left:8%;--rot:10deg;}
 
 .corner-photo{
+
     position:absolute;
-    width:100px;
-    height:100px;
+
+    width:170px;
+
+    height:170px;
+
     object-fit:cover;
-    border:5px solid white;
-    border-radius:8px;
-    box-shadow:0 8px 18px rgba(0,0,0,.18);
-    z-index:1;
-}
 
-.cp1{ top:14px;  left:14px;  transform:rotate(-8deg); }
-.cp2{ top:14px;  right:14px; transform:rotate(7deg); }
-.cp3{ bottom:14px; left:14px; transform:rotate(6deg); }
-.cp4{ bottom:14px; right:14px; transform:rotate(-6deg); }
+    border:8px solid white;
 
-.love-message{
-    position:relative;
+    border-radius:14px;
+
+    box-shadow:0 12px 24px rgba(0,0,0,.18);
+
     z-index:2;
 
-    max-width:230px;
-    margin:60px auto 0;
+}
+.cp1{top:25px;left:25px;transform:rotate(-8deg);}
+.cp2{top:25px;right:25px;transform:rotate(7deg);}
+.cp3{bottom:25px;left:25px;transform:rotate(6deg);}
+.cp4{bottom:25px;right:25px;transform:rotate(-6deg);}
 
-    font-family:"Sacramento", cursive;
-    font-size:26px;
+.cp5{
+    top:50%;
+    left:8%;
+    transform:translateY(-50%) rotate(-10deg);
+}
+
+.cp6{
+    top:50%;
+    right:8%;
+    transform:translateY(-50%) rotate(9deg);
+}
+
+.cp7{
+    top:160px;
+    left:50%;
+    transform:translateX(-50%) rotate(-5deg);
+}
+
+.cp8{
+    bottom:160px;
+    left:50%;
+    transform:translateX(-50%) rotate(6deg);
+}
+
+.love-message{
+
+    position:absolute;
+
+    top:50%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:45%;
+
+    z-index:3;
+
+    font-family:"Sacramento",cursive;
+
+    font-size:42px;
+
     color:#c9436a;
-    line-height:1.4;
+
+    text-align:center;
+
+    line-height:1.35;
+
+    text-shadow:2px 2px 12px rgba(255,255,255,.9);
+
 }
 
 /* ===========================
