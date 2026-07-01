@@ -1,54 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Happy Birthday AR</title>
+<title>Your Gifts ❤️</title>
 
-    <link rel="stylesheet" href="birthday.css">
+<link rel="stylesheet" href="birthday.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Baloo+2:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Sacramento&family=Baloo+2:wght@700&display=swap" rel="stylesheet">
 
 </head>
-
 <body>
 
-<div class="card">
+<audio id="bgMusic2" loop autoplay>
+    <source src="music/birthday.mp3" type="audio/mpeg">
+</audio>
 
-    <div class="photo">
+<button id="musicBtn2" title="Music On">🔊</button>
 
-        <img src="images/birthday-boy.png" alt="Birthday Boy">
+<!-- Party background layers -->
+<div class="party-bg"></div>
 
-    </div>
+<div class="balloons">
+    <span class="balloon b1">🎈</span>
+    <span class="balloon b2">🎈</span>
+    <span class="balloon b3">🎈</span>
+    <span class="balloon b4">🎈</span>
+    <span class="balloon b5">🎈</span>
+</div>
 
-    <div class="content">
+<div class="confetti-field">
+    <span class="dot d1"></span>
+    <span class="dot d2"></span>
+    <span class="dot d3"></span>
+    <span class="dot d4"></span>
+    <span class="dot d5"></span>
+    <span class="dot d6"></span>
+    <span class="dot d7"></span>
+    <span class="dot d8"></span>
+    <span class="dot d9"></span>
+    <span class="dot d10"></span>
+</div>
 
-        <h1>Happy Birthday AR 🎉</h1>
+<div class="page">
 
-        <p>
+    <h1 class="gift-title">Your Gifts, My Love</h1>
+    <p class="gift-subtitle">Tap each one to open ✨</p>
 
-            Today is all about celebrating you.
-            May this year bring endless happiness,
-            exciting adventures, success in everything
-            you dream of, and countless reasons to smile.
+    <div class="gifts-grid">
 
-            Hope every wish you make today comes true.
-            Enjoy your special day! ❤️
+        <div class="gift-box" data-gift="1">
+            <div class="gift-emoji">🎁</div>
+            <p class="gift-label">Gift One</p>
+        </div>
 
-        </p>
+        <div class="gift-box" data-gift="2">
+            <div class="gift-emoji">🎁</div>
+            <p class="gift-label">Gift Two</p>
+        </div>
 
-        <button onclick="location.href='gifts.html'">
+        <div class="gift-box" data-gift="3">
+            <div class="gift-emoji">🎁</div>
+            <p class="gift-label">Gift Three</p>
+        </div>
 
-            🎁 See My Gifts
-
-        </button>
+        <div class="gift-box" data-gift="4">
+            <div class="gift-emoji">🎁</div>
+            <p class="gift-label">Gift Four</p>
+        </div>
 
     </div>
 
 </div>
+
+<!-- ===================== MODAL OVERLAY ===================== -->
+<div class="modal-overlay" id="modalOverlay">
+
+    <div class="modal-card" id="modalCard">
+
+        <button class="modal-close" id="modalClose">✕</button>
+
+        <!-- ---------- GIFT 1 : LETTER ---------- -->
+        <div class="gift-content" id="content-1">
+            <div class="envelope">
+                <div class="envelope-flap"></div>
+            </div>
+            <div class="letter">
+                <img src="images/baby_photo.jpg" alt="baby photo" class="baby-photo">
+                <p class="letter-text">
+                    You are doing so great, AR. Every step you take makes me prouder than the last.
+                    Keep going, keep shining — I'm so proud of you, today and always.
+                </p>
+                <p class="letter-signoff">— Your biggest fan ❤️</p>
+            </div>
+        </div>
+
+        <!-- ---------- GIFT 2 : COLLAGE ---------- -->
+        <div class="gift-content" id="content-2">
+            <div class="collage">
+                <div class="kiss-bg">
+                    <span>💋</span><span>💋</span><span>💋</span><span>💋</span>
+                    <span>💋</span><span>💋</span><span>💋</span><span>💋</span>
+                    <span>💋</span><span>💋</span><span>💋</span><span>💋</span>
+                </div>
+
+                <img src="images/photo1.jpg" class="corner-photo cp1" alt="us">
+                <img src="images/photo2.jpg" class="corner-photo cp2" alt="us">
+                <img src="images/photo3.jpg" class="corner-photo cp3" alt="us">
+                <img src="images/photo4.jpg" class="corner-photo cp4" alt="us">
+
+                <p class="love-message">
+                    Every photo with you is my favorite one.<br>
+                    You are my home, my favorite hello and hardest goodbye.
+                </p>
+            </div>
+        </div>
+
+        <!-- ---------- GIFT 3 : VIDEO ---------- -->
+        <div class="gift-content" id="content-3">
+            <div class="video-frame">
+                <span class="vf-deco vf1">✨</span>
+                <span class="vf-deco vf2">💖</span>
+                <span class="vf-deco vf3">🎀</span>
+                <span class="vf-deco vf4">✨</span>
+
+                <video id="giftVideo" src="video/for_you.mp4" playsinline></video>
+
+                <button id="videoPlayBtn" class="video-play-btn">▶</button>
+            </div>
+        </div>
+
+        <!-- ---------- GIFT 4 : ILLUSTRATION ---------- -->
+        <div class="gift-content" id="content-4">
+            <div class="illustration-wrap">
+                <svg viewBox="0 0 300 300" class="grow-illustration">
+                    <!-- ground -->
+                    <ellipse cx="150" cy="275" rx="90" ry="10" fill="#cfeee0"/>
+                    <!-- stem -->
+                    <path d="M150 270 C 150 220, 140 190, 150 150 C 160 110, 145 80, 150 40"
+                          fill="none" stroke="#5fa98a" stroke-width="5" stroke-linecap="round"/>
+                    <!-- small heart leaves along stem -->
+                    <g fill="#e6668a">
+                        <path d="M118 230 c0-6 6-10 11-6 c2 1 3 3 3 5 c0-2 1-4 3-5 c5-4 11 0 11 6 c0 7-14 15-14 15 s-14-8-14-15z" opacity="0.85"/>
+                        <path d="M158 175 c0-5 5-8 9-5 c1.5 1 2.5 2.5 2.5 4 c0-1.5 1-3 2.5-4 c4-3 9 0 9 5 c0 6-11.5 12-11.5 12 s-11.5-6-11.5-12z" opacity="0.85"/>
+                        <path d="M120 120 c0-5 5-8 9-5 c1.5 1 2.5 2.5 2.5 4 c0-1.5 1-3 2.5-4 c4-3 9 0 9 5 c0 6-11.5 12-11.5 12 s-11.5-6-11.5-12z" opacity="0.85"/>
+                    </g>
+                    <!-- big heart blossom on top -->
+                    <path d="M150 70 c0-14 13-22 24-13 c4 3 6 8 6 12 c0-4 2-9 6-12 c11-9 24-1 24 13 c0 17-30 34-30 34 s-30-17-30-34z"
+                          fill="#ff8fa3" transform="translate(-58,-25) scale(0.9)"/>
+                    <path d="M150 55 c0-16 14-25 27-15 c4.5 3.5 6.5 9 6.5 13.5 c0-4.5 2-10 6.5-13.5 c13-10 27 -1 27 15 c0 19-33.5 38-33.5 38 s-33.5-19-33.5-38z"
+                          fill="#ff5f7e"/>
+                </svg>
+
+                <p class="grow-message">I wanna grow old with you <span class="heart-pulse">❤️</span></p>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="birthday.js"></script>
 
 </body>
 </html>
