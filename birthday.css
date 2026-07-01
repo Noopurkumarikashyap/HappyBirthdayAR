@@ -269,50 +269,125 @@ body{
    GIFT 1 : LETTER
 =========================== */
 
-.envelope{
-    width:140px;
-    height:90px;
-    margin:0 auto 18px;
-    position:relative;
-    background:#3b83b9;
-    border-radius:8px;
+#content-1{
+
+    background:rgb(248,228,202);   /* #F8E4CA */
+
+    border-radius:28px;
+
+    padding:40px;
+
 }
 
-.envelope-flap{
-    position:absolute;
-    top:0; left:0;
-    width:0; height:0;
-    border-left:70px solid transparent;
-    border-right:70px solid transparent;
-    border-top:46px solid #2d6690;
+/* Main Layout */
+
+.letter-layout{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:45px;
+
+    min-height:550px;
+
+}
+
+/* LEFT SIDE */
+
+.letter-photo{
+
+    flex:0 0 38%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
 }
 
 .baby-photo{
 
     width:100%;
-    height:100%;
+
+    max-width:300px;
+
+    height:390px;
 
     object-fit:cover;
 
     border-radius:22px;
 
-    display:block;
+    border:8px solid white;
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.18);
 
 }
 
-.letter-text{
-    color:#5a4a52;
-    font-size:16px;
-    line-height:1.6;
-    padding:0 6px;
+/* RIGHT SIDE */
+
+.letter-message{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    text-align:left;
+
 }
 
-.letter-signoff{
-    margin-top:14px;
-    color:#e6668a;
-    font-weight:600;
+.heart-top{
+
+    font-size:48px;
+
+    margin-bottom:12px;
+
+}
+
+.letter-message h2{
+
+    font-family:"Baloo 2", cursive;
+
+    font-size:42px;
+
+    color:#3b83b9;
+
+    line-height:1.2;
+
+    margin-bottom:24px;
+
+}
+
+.letter-message p{
+
+    font-size:19px;
+
+    line-height:1.9;
+
+    color:#5c4c47;
+
+}
+
+.letter-message h3{
+
+    margin-top:35px;
+
     font-family:"Sacramento", cursive;
-    font-size:24px;
+
+    font-size:42px;
+
+    color:#d95f82;
+
+    font-weight:normal;
+
 }
 
 /* ===========================
