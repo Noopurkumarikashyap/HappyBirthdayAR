@@ -1,103 +1,519 @@
-body{
-
+*{
     margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-    font-family:Poppins,sans-serif;
-
-    background:#f9e3c9;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
+body{
+    width:100%;
     min-height:100vh;
-
+    font-family:Poppins,sans-serif;
+    overflow-x:hidden;
+    position:relative;
+    background:linear-gradient(160deg,#fff0f3 0%,#ffe4ec 35%,#e8f3ff 100%);
 }
 
-.card{
+/* ===========================
+   PARTY BACKGROUND
+=========================== */
 
-    width:1100px;
+.party-bg{
+    position:fixed;
+    inset:0;
+    z-index:0;
+    background:
+        radial-gradient(circle at 15% 20%, rgba(255,196,214,.55) 0, transparent 40%),
+        radial-gradient(circle at 85% 15%, rgba(159,207,255,.5) 0, transparent 42%),
+        radial-gradient(circle at 20% 85%, rgba(255,214,153,.45) 0, transparent 40%),
+        radial-gradient(circle at 85% 80%, rgba(191,247,214,.5) 0, transparent 40%);
+}
+
+.balloons{
+    position:fixed;
+    inset:0;
+    z-index:1;
+    pointer-events:none;
+}
+
+.balloon{
+    position:absolute;
+    font-size:56px;
+    opacity:.85;
+    filter:drop-shadow(0 6px 10px rgba(0,0,0,.1));
+    animation:balloonFloat 6s ease-in-out infinite;
+}
+
+.b1{ left:5%;  top:12%; animation-delay:0s;   font-size:48px;}
+.b2{ left:88%; top:8%;  animation-delay:.8s;  font-size:60px;}
+.b3{ left:12%; top:70%; animation-delay:1.6s; font-size:50px;}
+.b4{ left:80%; top:65%; animation-delay:2.4s; font-size:44px;}
+.b5{ left:48%; top:5%;  animation-delay:1.1s; font-size:40px;}
+
+@keyframes balloonFloat{
+    0%,100%{ transform:translateY(0) rotate(-3deg); }
+    50%{ transform:translateY(-18px) rotate(3deg); }
+}
+
+.confetti-field{
+    position:fixed;
+    inset:0;
+    z-index:1;
+    pointer-events:none;
+}
+
+.dot{
+    position:absolute;
+    width:10px;
+    height:10px;
+    border-radius:2px;
+    opacity:.7;
+    animation:dotSpin 4s linear infinite;
+}
+
+.d1{ left:10%; top:20%; background:#3b83b9; animation-delay:.2s;}
+.d2{ left:25%; top:60%; background:#e6668a; animation-delay:.9s;}
+.d3{ left:40%; top:30%; background:#ffd166; animation-delay:1.4s;}
+.d4{ left:55%; top:75%; background:#8ee3c8; animation-delay:.4s;}
+.d5{ left:65%; top:15%; background:#3b83b9; animation-delay:1.8s;}
+.d6{ left:75%; top:55%; background:#e6668a; animation-delay:.6s;}
+.d7{ left:85%; top:25%; background:#ffd166; animation-delay:2.1s;}
+.d8{ left:92%; top:70%; background:#8ee3c8; animation-delay:1.1s;}
+.d9{ left:5%;  top:80%; background:#e6668a; animation-delay:1.5s;}
+.d10{left:48%; top:90%; background:#3b83b9; animation-delay:.3s;}
+
+@keyframes dotSpin{
+    0%{ transform:rotate(0deg) translateY(0); opacity:.7;}
+    50%{ transform:rotate(180deg) translateY(-14px); opacity:1;}
+    100%{ transform:rotate(360deg) translateY(0); opacity:.7;}
+}
+
+/* ===========================
+   PAGE / GIFT GRID
+=========================== */
+
+.page{
+    position:relative;
+    z-index:5;
+    text-align:center;
+    padding:70px 20px 100px;
+}
+
+.gift-title{
+    font-family:"Baloo 2", cursive;
+    font-size:48px;
+    color:#3b83b9;
+    text-shadow:0 3px 10px rgba(255,255,255,.85);
+}
+
+.gift-subtitle{
+    margin-top:10px;
+    color:#7a5a66;
+    font-size:16px;
+}
+
+.gifts-grid{
+    margin:50px auto 0;
+    max-width:520px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:36px;
+    justify-items:center;
+}
+
+.gift-box{
+    width:180px;
+    height:180px;
+
+    border-radius:24px;
+
+    background:rgba(255,255,255,.4);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    border:1.5px solid rgba(255,255,255,.7);
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.12),
+        inset 0 1px 2px rgba(255,255,255,.9);
 
     display:flex;
-
+    flex-direction:column;
     align-items:center;
-
-    gap:80px;
-
-    padding:40px 20px;
-
-}
-.photo img{
-
-    width:380px;
-
-    border-radius:25px;
-
-}
-
-.content{
-
-    flex:1;
-
-    max-width:620px;
-
-}
-.content h1{
-
-    font-family:"Baloo 2",cursive;
-
-    font-size:62px;
-
-    color:#3b83b9;
-
-    margin-bottom:20px;
-
-}
-
-.content p{
-
-    font-size:22px;
-
-    line-height:1.9;
-
-    color:#555;
-
-    margin-bottom:40px;
-
-}
-
-.content button{
-
-    background:#3b83b9;
-
-    color:white;
-
-    border:none;
-
-    padding:18px 42px;
-
-    border-radius:40px;
-
-    font-size:22px;
-
-    font-weight:600;
+    justify-content:center;
+    gap:10px;
 
     cursor:pointer;
 
+    transition:transform .25s ease, box-shadow .25s ease;
+}
+
+.gift-box:hover{
+    transform:translateY(-6px);
+    box-shadow:
+        0 18px 36px rgba(0,0,0,.16),
+        inset 0 1px 2px rgba(255,255,255,.9);
+}
+
+.gift-emoji{
+    font-size:70px;
+    filter:drop-shadow(0 6px 8px rgba(0,0,0,.12));
+}
+
+.gift-label{
+    font-weight:600;
+    color:#3b83b9;
+    font-size:16px;
+}
+
+.gift-box.opened{
+    opacity:.55;
+}
+
+.gift-box.opened .gift-emoji{
+    filter:grayscale(.2) drop-shadow(0 6px 8px rgba(0,0,0,.12));
+}
+
+/* Shake before opening */
+.gift-box.shake{
+    animation:giftShake .55s ease;
+}
+
+@keyframes giftShake{
+    0%{ transform:rotate(0deg); }
+    15%{ transform:rotate(-8deg) scale(1.03); }
+    30%{ transform:rotate(8deg) scale(1.05); }
+    45%{ transform:rotate(-8deg) scale(1.06); }
+    60%{ transform:rotate(8deg) scale(1.05); }
+    75%{ transform:rotate(-4deg) scale(1.03); }
+    100%{ transform:rotate(0deg) scale(1); }
+}
+
+/* ===========================
+   MODAL OVERLAY
+=========================== */
+
+.modal-overlay{
+    position:fixed;
+    inset:0;
+    z-index:100;
+
+    background:rgba(30,20,30,.55);
+    backdrop-filter:blur(4px);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .3s ease;
+}
+
+.modal-overlay.active{
+    opacity:1;
+    pointer-events:auto;
+}
+
+.modal-card{
+    position:relative;
+
+    width:min(520px, 90vw);
+    max-height:85vh;
+    overflow-y:auto;
+
+    background:rgba(255,255,255,.92);
+    border-radius:26px;
+    padding:38px 28px 32px;
+
+    box-shadow:0 30px 60px rgba(0,0,0,.3);
+
+    transform:scale(.85) translateY(20px);
+    transition:transform .35s cubic-bezier(.34,1.56,.64,1);
+}
+
+.modal-overlay.active .modal-card{
+    transform:scale(1) translateY(0);
+}
+
+.modal-close{
+    position:absolute;
+    top:14px;
+    right:16px;
+
+    width:36px;
+    height:36px;
+    border-radius:50%;
+    border:none;
+
+    background:#3b83b9;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.modal-close:hover{
+    transform:scale(1.1);
+}
+
+.gift-content{
+    display:none;
+    text-align:center;
+}
+
+.gift-content.active{
+    display:block;
+}
+
+/* ===========================
+   GIFT 1 : LETTER
+=========================== */
+
+.envelope{
+    width:140px;
+    height:90px;
+    margin:0 auto 18px;
+    position:relative;
+    background:#3b83b9;
+    border-radius:8px;
+}
+
+.envelope-flap{
+    position:absolute;
+    top:0; left:0;
+    width:0; height:0;
+    border-left:70px solid transparent;
+    border-right:70px solid transparent;
+    border-top:46px solid #2d6690;
+}
+
+.baby-photo{
+    width:150px;
+    height:150px;
+    object-fit:cover;
+    border-radius:14px;
+    border:5px solid white;
+    box-shadow:0 10px 24px rgba(0,0,0,.18);
+    margin:6px auto 18px;
+    display:block;
+    transform:rotate(-2deg);
+}
+
+.letter-text{
+    color:#5a4a52;
+    font-size:16px;
+    line-height:1.6;
+    padding:0 6px;
+}
+
+.letter-signoff{
+    margin-top:14px;
+    color:#e6668a;
+    font-weight:600;
+    font-family:"Sacramento", cursive;
+    font-size:24px;
+}
+
+/* ===========================
+   GIFT 2 : COLLAGE
+=========================== */
+
+.collage{
+    position:relative;
+    min-height:340px;
+    border-radius:18px;
+    overflow:hidden;
+    background:linear-gradient(135deg,#fff4f7,#ffe6ee);
+    padding:20px;
+}
+
+.kiss-bg{
+    position:absolute;
+    inset:0;
+    z-index:0;
+}
+
+.kiss-bg span{
+    position:absolute;
+    font-size:22px;
+    opacity:.18;
+}
+
+.kiss-bg span:nth-child(1){ top:6%;  left:10%; }
+.kiss-bg span:nth-child(2){ top:14%; left:70%; }
+.kiss-bg span:nth-child(3){ top:30%; left:40%; }
+.kiss-bg span:nth-child(4){ top:42%; left:15%; }
+.kiss-bg span:nth-child(5){ top:48%; left:80%; }
+.kiss-bg span:nth-child(6){ top:60%; left:50%; }
+.kiss-bg span:nth-child(7){ top:70%; left:20%; }
+.kiss-bg span:nth-child(8){ top:78%; left:65%; }
+.kiss-bg span:nth-child(9){ top:88%; left:35%; }
+.kiss-bg span:nth-child(10){top:20%; left:88%; }
+.kiss-bg span:nth-child(11){top:55%; left:5%;  }
+.kiss-bg span:nth-child(12){top:92%; left:8%;  }
+
+.corner-photo{
+    position:absolute;
+    width:100px;
+    height:100px;
+    object-fit:cover;
+    border:5px solid white;
+    border-radius:8px;
+    box-shadow:0 8px 18px rgba(0,0,0,.18);
+    z-index:1;
+}
+
+.cp1{ top:14px;  left:14px;  transform:rotate(-8deg); }
+.cp2{ top:14px;  right:14px; transform:rotate(7deg); }
+.cp3{ bottom:14px; left:14px; transform:rotate(6deg); }
+.cp4{ bottom:14px; right:14px; transform:rotate(-6deg); }
+
+.love-message{
+    position:relative;
+    z-index:2;
+
+    max-width:230px;
+    margin:60px auto 0;
+
+    font-family:"Sacramento", cursive;
+    font-size:26px;
+    color:#c9436a;
+    line-height:1.4;
+}
+
+/* ===========================
+   GIFT 3 : VIDEO
+=========================== */
+
+.video-frame{
+    position:relative;
+    border-radius:18px;
+    padding:16px;
+    background:linear-gradient(135deg,#eaf5ff,#fdeef3);
+}
+
+.video-frame video{
+    width:100%;
+    border-radius:12px;
+    display:block;
+    background:#000;
+}
+
+.vf-deco{
+    position:absolute;
+    font-size:24px;
+    opacity:.9;
+}
+
+.vf1{ top:-4px;  left:-4px; }
+.vf2{ top:-10px; right:6px; }
+.vf3{ bottom:-4px; left:10px; }
+.vf4{ bottom:-10px; right:-4px; }
+
+.video-play-btn{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+
+    width:64px;
+    height:64px;
+    border-radius:50%;
+    border:none;
+
+    background:rgba(255,255,255,.85);
+    color:#3b83b9;
+    font-size:24px;
+
+    cursor:pointer;
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
+    transition:.2s;
+}
+
+.video-play-btn:hover{
+    transform:translate(-50%,-50%) scale(1.08);
+}
+
+.video-play-btn.hidden{
+    opacity:0;
+    pointer-events:none;
+}
+
+/* ===========================
+   GIFT 4 : ILLUSTRATION
+=========================== */
+
+.illustration-wrap{
+    padding:10px 6px 6px;
+}
+
+.grow-illustration{
+    width:220px;
+    height:220px;
+}
+
+.grow-message{
+    margin-top:10px;
+    font-family:"Sacramento", cursive;
+    font-size:30px;
+    color:#c9436a;
+}
+
+.heart-pulse{
+    display:inline-block;
+    animation:heartPulse 1.1s ease-in-out infinite;
+}
+
+@keyframes heartPulse{
+    0%,100%{ transform:scale(1); }
+    50%{ transform:scale(1.25); }
+}
+
+/* ===========================
+   MUSIC BUTTON (page 2)
+=========================== */
+
+#musicBtn2{
+    position:fixed;
+    top:25px;
+    right:25px;
+    z-index:50;
+
+    width:54px;
+    height:54px;
+    border:none;
+    border-radius:50%;
+
+    background:rgba(255,255,255,.4);
+    backdrop-filter:blur(14px);
+    border:1.5px solid rgba(255,255,255,.7);
+
+    color:#3b83b9;
+    font-size:24px;
+    cursor:pointer;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.12);
     transition:.25s;
-
 }
 
-.content button:hover{
-
-    transform:translateY(-3px);
-
-}
-
-.content button:hover{
-
+#musicBtn2:hover{
     transform:scale(1.08);
+}
 
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width:480px){
+    .gifts-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:22px;
+    }
+    .gift-box{
+        width:140px;
+        height:140px;
+    }
+    .gift-emoji{
+        font-size:54px;
+    }
 }
