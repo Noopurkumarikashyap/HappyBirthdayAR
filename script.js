@@ -1,4 +1,4 @@
-const PASSWORD = "18121996";
+const PASSWORD = "02071997";
 
 let input = "";
 
