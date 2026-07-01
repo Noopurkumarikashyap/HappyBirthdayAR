@@ -16,6 +16,8 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
+
+    overflow:hidden;
 }
 
 .container{
@@ -582,4 +584,31 @@ h3{
 
     }
 
+}
+
+/* ===========================
+   CONFETTI / POPPER BLAST
+=========================== */
+
+#confettiCanvas{
+    position:fixed;
+    inset:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    z-index:2000;
+}
+
+/* Shake the display + gentle glow when password is correct */
+
+.display.correct .box{
+    border-color:#e6668a;
+    color:#e6668a;
+    animation:correctPop .4s ease;
+}
+
+@keyframes correctPop{
+    0%{ transform:scale(1); }
+    40%{ transform:scale(1.12); }
+    100%{ transform:scale(1); }
 }
