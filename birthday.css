@@ -703,13 +703,15 @@ collage{
 
     font-family:"Sacramento",cursive;
 
-    font-size:68px;
+    font-size:52px;
+
+    line-height:1.3;
 
     color:#d84d77;
 
-    line-height:1.1;
+    margin-bottom:22px;
 
-    margin-bottom:15px;
+    padding-top:20px;
 
 }
 
